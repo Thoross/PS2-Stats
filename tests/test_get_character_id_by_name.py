@@ -14,7 +14,7 @@ Created on Jun 6, 2013
 '''
 
 import unittest
-import api
+from src import api 
 
 
 class Test(unittest.TestCase):

@@ -14,16 +14,12 @@ Created on Jun 24, 2013
 '''
 
 class Character(object):
-    '''
-    classdocs
-    '''
-    
 
-    def __init__(self,id,name):
+    def __init__(self,character_id,name):
         '''
         Constructor
         '''
-        self.id = id
+        self.character_id = character_id
         self.name = name
         self.level = 0
         self.score = 0
@@ -35,13 +31,35 @@ class Character(object):
         self.kills_per_minute = 0.00
         self.kills_per_hours = 0.00
         self.kills_per_class = {}
+        self.kills_per_faction = {}
         self.deaths = 0
+        self.suicides = 0
+        self.killed_by_empire = {}
+        self.killed_by_class = {}
+        self.killed_by_weapon_list = []
         self.deaths_per_minute = 0.00
         self.deaths_per_hour = 0.00
         self.deaths_per_class = {}
         self.damage_given = 0
+        self.damage_given_per_faction = {}
         self.damage_taken = 0
+        self.damage_taken_per_faction = {}
         self.certs = 0
         self.percentage_to_next = 0.00
+        self.hit_count = 0
+        self.hit_count_per_class = {}
+        self.fire_count = 0
+        self.fire_count_per_class = {}
+        self.accuracy_percentage = 0.00
+        self.infantry_accuracy_percentage = 0.00
+        self.vehicle_accuracy_percentage = 0.00
         self.vehicle_list = []
         self.weapon_list = []
+        
+    def calculate_per_hour(self, stat):
+        hours_played = self.time_played / 3600
+        return stat / hours_played
+    
+    def calculate_per_minute(self,stat):
+        minutes_played = self.time_played / 60
+        return stat / minutes_played     

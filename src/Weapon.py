@@ -14,13 +14,27 @@ Created on Jun 24, 2013
 '''
 
 class Weapon(object):
-    '''
-    classdocs
-    '''
 
-
-    def __init__(self,id):
+    def __init__(self,weapon_id,name):
         '''
         Constructor
         '''
-        self.id = id
+        self.weapon_id = weapon_id
+        self.name = name
+        self.description = ''
+        self.time_played = 0
+        self.kills = 0
+        self.kills_per_minute = 0.00
+        self.kills_per_hour = 0.00
+        self.kills_per_empire = {}
+        self.score = 0
+        self.score_per_minute = 0.00
+        self.score_per_hour = 0.00
+        self.fire_count = 0
+        self.hit_count = 0
+        self.accuracy_percentage = 0.00
+        self.headshots = 0
+        self.damage_given = 0
+        self.damage_given_per_faction = {}
+        self.damage_taken = 0
+        self.damage_taken_per_faction = {}

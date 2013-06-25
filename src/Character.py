@@ -19,9 +19,33 @@ class Character(object):
     '''
     
 
-    def __init__(self,id):
+    def __init__(self,id,name):
         '''
         Constructor
         '''
         self.id = id
+        self.name = name
+        self.level = 0
+        self.score = 0
+        self.score_per_minute = 0.00
+        self.score_per_hour = 0.00
+        self.time_played = 0
+        self.kill_death_ratio = 0.00
+        self.kills = 0
+        self.kills_per_minute = 0.00
+        self.kills_per_hours = 0.00
+        self.kills_per_class = {}
+        self.deaths = 0
+        self.deaths_per_minute = 0.00
+        self.deaths_per_hour = 0.00
+        self.deaths_per_class = {}
+        self.damage_given = 0
+        self.damage_taken = 0
+        self.certs = 0
+        self.percentage_to_next = 0.00
+        self.vehicle_list = []
+        self.weapon_list = []
+        
+        
+        
         

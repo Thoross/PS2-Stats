@@ -45,7 +45,3 @@ class Character(object):
         self.percentage_to_next = 0.00
         self.vehicle_list = []
         self.weapon_list = []
-        
-        
-        
-        

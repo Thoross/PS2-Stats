@@ -55,11 +55,3 @@ class Character(object):
         self.vehicle_accuracy_percentage = 0.00
         self.vehicle_list = []
         self.weapon_list = []
-        
-    def calculate_per_hour(self, stat):
-        hours_played = self.time_played / 3600
-        return stat / hours_played
-    
-    def calculate_per_minute(self,stat):
-        minutes_played = self.time_played / 60
-        return stat / minutes_played     

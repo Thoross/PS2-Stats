@@ -24,4 +24,3 @@ class url(object):
         '''
         url_root = "http://census.soe.com/get/ps2-beta/"
         self.full = url_root + parameters
-         

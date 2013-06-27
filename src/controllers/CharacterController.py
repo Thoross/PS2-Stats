@@ -22,6 +22,7 @@ class CharacterController(object):
         player.time_played = base["stats"]["play_time"]["value"]
         player.score_per_minute = self.calculate_per_minute(player.score,player.time_played)
         player.score_per_hour = self.calculate_per_hour(player.score, player.time_played)
+        player.level = base["experience"][0]["level"]
         return player
         
     def calculate_per_hour(self,stat,time_played):

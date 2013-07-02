@@ -28,12 +28,12 @@ class ControlMainWindow(QMainWindow):
         self.ui.lbl_rank_value.setText(player.level)
         self.ui.lbl_score_value.setText(format(int(player.score),",d"))
         self.ui.lbl_timeplayed_value.setText(self.get_playtime(int(player.time_played)))
-        self.ui.lbl_spm_value.setText("%.2f" % round(player.score_per_minute,2))
-        self.ui.lbl_sph_value.setText("%.2f" % round(player.score_per_hour,2))
+        self.ui.lbl_spm_value.setText("%.2f" % player.score_per_minute)
+        self.ui.lbl_sph_value.setText("%.2f" % player.score_per_hour)
         self.ui.lbl_faction_value.setText(player.faction.upper())
-        self.ui.lbl_certs_value.setText(player.certs)
-        self.ui.lbl_cpm_value.setText("%.2f" % round(player.certs_per_minute))
-        self.ui.lbl_cph_value.setText("%.2f" % round(player.certs_per_hour))
+        self.ui.lbl_certs_value.setText(format(int(player.certs),",d"))
+        self.ui.lbl_cpm_value.setText("%.2f" % player.certs_per_minute)
+        self.ui.lbl_cph_value.setText("%.2f" % player.certs_per_hour)
         self.ui.lbl_percentage_to_next_value.setText("%"+player.percentage_to_next)
         
     def get_playtime(self,time_played):

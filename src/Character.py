@@ -21,6 +21,7 @@ class Character(object):
         '''
         self.character_id = character_id
         self.name = name
+        self.faction = ""
         self.level = 0
         self.score = 0
         self.score_per_minute = 0.00
@@ -45,6 +46,8 @@ class Character(object):
         self.damage_taken = 0
         self.damage_taken_per_faction = {}
         self.certs = 0
+        self.certs_per_minute = 0.00
+        self.certs_per_hour = 0.00
         self.percentage_to_next = 0.00
         self.hit_count = 0
         self.hit_count_per_class = {}
@@ -55,3 +58,6 @@ class Character(object):
         self.vehicle_accuracy_percentage = 0.00
         self.vehicle_list = []
         self.weapon_list = []
+        
+    def to_string(self,value):
+        return str(value)

@@ -22,14 +22,22 @@ class CharacterController(object):
         player.time_played = base["stats"]["play_time"]["value"]
         player.score_per_minute = self.calculate_per_minute(player.score,player.time_played)
         player.score_per_hour = self.calculate_per_hour(player.score, player.time_played)
-        player.level = base["experience"][0]["level"]
+        player.level = base["experience"][0]["rank"]
+        player.faction = base["type"]["faction"]
+        player.certs = base["certs"]["currentpoints"]
+        player.percentage_to_next = base["certs"]["percentagetonext"]
+        player.certs_per_minute = self.calculate_per_minute(player.certs, player.time_played)
+        player.certs_per_hour = self.calculate_per_hour(player.certs, player.time_played)
         return player
         
     def calculate_per_hour(self,stat,time_played):
         hours_played = float(time_played) / 3600
         return float(stat) / hours_played
+    
     def calculate_per_minute(self,stat,time_played):
         minutes_played = float(time_played) / 60
         return float(stat) / minutes_played
-        
+    
+    def to_string(self,value):
+        return str(value)
         

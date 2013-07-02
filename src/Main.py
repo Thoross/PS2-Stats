@@ -3,11 +3,12 @@ Created on Jun 25, 2013
 
 @author: bbetts
 '''
-import api
-from appFrame import *
-
-
+from src.GUI.ControlMainWindow import ControlMainWindow
+from PySide.QtGui import QApplication
+import sys
 
 if __name__ == '__main__':
-    appframe = appFrame()
-    appframe.main()
+    app = QApplication(sys.argv)
+    my_app = ControlMainWindow()
+    my_app.show()
+    sys.exit(app.exec_())

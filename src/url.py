@@ -22,5 +22,5 @@ class url(object):
         '''
         Constructor
         '''
-        url_root = "http://census.soe.com/get/ps2-beta/"
+        url_root = "http://census.soe.com/get/ps2/"
         self.full = url_root + parameters

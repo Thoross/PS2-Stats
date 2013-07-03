@@ -15,13 +15,14 @@ Created on Jun 24, 2013
 
 class Character(object):
 
-    def __init__(self,character_id,name):
+    def __init__(self,character_id,name,server):
         '''
         Constructor
         '''
         self.character_id = character_id
         self.name = name
         self.faction = ""
+        self.server = server
         self.level = 0
         self.score = 0
         self.score_per_minute = 0.00
@@ -45,10 +46,14 @@ class Character(object):
         self.damage_given_per_faction = {}
         self.damage_taken = 0
         self.damage_taken_per_faction = {}
-        self.certs = 0
+        self.total_certs = 0
+        self.spent_certs = 0
+        self.available_certs = 0
+        self.earned_certs = 0
+        self.gifted_certs = 0
         self.certs_per_minute = 0.00
         self.certs_per_hour = 0.00
-        self.percentage_to_next = 0.00
+        self.certs_percentage_to_next = 0.00
         self.hit_count = 0
         self.hit_count_per_class = {}
         self.fire_count = 0

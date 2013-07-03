@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>635</width>
+    <width>642</width>
     <height>523</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>611</width>
+      <width>621</width>
       <height>61</height>
      </rect>
     </property>
@@ -72,7 +72,7 @@
       <x>10</x>
       <y>80</y>
       <width>621</width>
-      <height>381</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="tabPosition">
@@ -94,7 +94,7 @@
         <x>0</x>
         <y>0</y>
         <width>611</width>
-        <height>351</height>
+        <height>371</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -129,6 +129,24 @@
            </item>
            <item>
             <widget class="QLabel" name="lbl_name_value">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="lbl_server">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Server:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_server_value">
              <property name="text">
               <string/>
              </property>
@@ -214,10 +232,6 @@
            </item>
           </layout>
          </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_21">
            <item>
@@ -254,6 +268,28 @@
            </item>
           </layout>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="lbl_total_certs">
+             <property name="text">
+              <string>Total Certs Accumulated:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_total_certs_value">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
@@ -273,6 +309,42 @@
           </layout>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <widget class="QLabel" name="lbl_gifted_certs">
+             <property name="text">
+              <string>Certs Gifted:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_gifted_certs_value">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="lbl_spent_certs">
+             <property name="text">
+              <string>Certs Spent:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_spent_certs_value">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_25">
            <item>
             <widget class="QLabel" name="lbl_percentage_to_next">
@@ -283,6 +355,24 @@
            </item>
            <item>
             <widget class="QLabel" name="lbl_percentage_to_next_value">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="lbl_available_certs">
+             <property name="text">
+              <string>Available Certs:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lbl_available_certs_value">
              <property name="text">
               <string/>
              </property>
@@ -331,6 +421,9 @@
             </widget>
            </item>
           </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9"/>
          </item>
         </layout>
        </item>
@@ -564,7 +657,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>635</width>
+     <width>642</width>
      <height>22</height>
     </rect>
    </property>

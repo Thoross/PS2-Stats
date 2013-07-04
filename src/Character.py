@@ -15,15 +15,17 @@ Created on Jun 24, 2013
 
 class Character(object):
 
-    def __init__(self,character_id,name,server):
+    def __init__(self,character_id,name):
         '''
         Constructor
         '''
         self.character_id = character_id
         self.name = name
         self.faction = ""
-        self.server = server
+        self.server = ""
+        self.outfit = ""
         self.level = 0
+        self.percentage_to_next_level = 0.00
         self.score = 0
         self.score_per_minute = 0.00
         self.score_per_hour = 0.00
@@ -36,7 +38,7 @@ class Character(object):
         self.kills_per_faction = {}
         self.deaths = 0
         self.suicides = 0
-        self.killed_by_empire = {}
+        self.killed_by_faction = {}
         self.killed_by_class = {}
         self.killed_by_weapon_list = []
         self.deaths_per_minute = 0.00
@@ -63,6 +65,8 @@ class Character(object):
         self.vehicle_accuracy_percentage = 0.00
         self.vehicle_list = []
         self.weapon_list = []
+        self.facilities_captured = 0
+        self.facilities_defended = 0
+        self.ribbons = 0
+        self.medals = 0
         
-    def to_string(self,value):
-        return str(value)

@@ -60,7 +60,20 @@ class CharacterController(object):
         
     def get_kills_info(self,base,player):
         stats_history_base = base["stats"]["stat_history"]
+        stats_by_faction_base = base["stats"]["stat_by_faction"]
         
         player.kills = stats_history_base["kills"]["all_time"]
         player.kills_per_minute = calculate_per_minute(player.kills,player.time_played)
         player.kills_per_hour = calculate_per_hour(player.kills,player.time_played)
+        player.deaths = stats_history_base["deaths"]["all_time"]
+        player.deaths_per_minute = calculate_per_minute(player.deaths,player.time_played)
+        player.deaths_per_hour = calculate_per_hour(player.deaths,player.time_played)
+        player.kill_death_ratio = float(player.kills) / float(player.deaths)
+        stats_by_faction = get_list_as_dict(stats_by_faction_base)
+        #player.assists = stats_history_base["assist_count"]["all_time"]
+        kills_by_faction = {
+                            "NC": stats_by_faction["weapon_kills"]["value_forever_nc"],
+                            "TR": stats_by_faction["weapon_kills"]["value_forever_tr"],
+                            "VS": stats_by_faction["weapon_kills"]["value_forever_vs"]
+                            }
+        player.kills_per_faction = kills_by_faction

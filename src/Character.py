@@ -14,6 +14,9 @@ Created on Jun 24, 2013
 '''
 
 class Character(object):
+    
+    # The key is the profile_id that comes from the api.
+    classes = {'2':"Infiltrator", '4':"Light Assault",'5':"Combat Medic","6":"Engineer","7":"Heavy Assault","8":"MAX"}
 
     def __init__(self,character_id,name):
         '''
@@ -69,4 +72,9 @@ class Character(object):
         self.facilities_defended = 0
         self.ribbons = 0
         self.medals = 0
+        self.stats = []
+        self.stat_by_faction = []
+        self.assists = 0
+        self.headshots = 0
+        self.headshots_by_empire = {}
         

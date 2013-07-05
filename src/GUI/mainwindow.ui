@@ -438,48 +438,6 @@ Next Cert:</string>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>dsamdsa </string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLabel" name="lbl_kph_value">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Placeholder</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>sandlslkdsa</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Placeholder</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_kpm">
-         <property name="text">
-          <string>Kills Per Minute:</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="1">
         <widget class="QLabel" name="lbl_kills_value">
          <property name="text">
@@ -495,23 +453,24 @@ Next Cert:</string>
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QLabel" name="label_7">
+        <widget class="QLabel" name="lbl_dph">
          <property name="text">
-          <string>dsadsa;,d</string>
+          <string>Deaths 
+Per Hour:</string>
          </property>
         </widget>
        </item>
        <item row="0" column="2">
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="lbl_deaths">
          <property name="text">
-          <string>Placeholder</string>
+          <string>Deaths:</string>
          </property>
         </widget>
        </item>
        <item row="2" column="3">
-        <widget class="QLabel" name="label_12">
+        <widget class="QLabel" name="lbl_dph_value">
          <property name="text">
-          <string>dsalmsa dsa</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -523,14 +482,156 @@ Next Cert:</string>
         </widget>
        </item>
        <item row="0" column="5">
-        <widget class="QLabel" name="label_14">
+        <widget class="QLabel" name="lbl_kdr_value">
          <property name="text">
-          <string>mdfsalmsa</string>
+          <string/>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
         <widget class="QLabel" name="lbl_kpm_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="lbl_kph_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="lbl_death_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="lbl_kdr">
+         <property name="text">
+          <string>Kill Death 
+Ratio:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="lbl_dpm">
+         <property name="text">
+          <string>Deaths 
+Per Minute:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_kpm">
+         <property name="text">
+          <string>Kills Per Minute:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lbl_TR_kills">
+         <property name="text">
+          <string>TR Kills:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lbl_NC_kills">
+         <property name="text">
+          <string>NC Kills:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QLabel" name="lbl_assists_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="lbl_dpm_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLabel" name="lbl_assists">
+         <property name="text">
+          <string>Assists:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="lbl_VS_kills">
+         <property name="text">
+          <string>VS Kills:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="lbl_NC_deaths">
+         <property name="text">
+          <string>NC Deaths:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="lbl_TR_deaths">
+         <property name="text">
+          <string>TR Deaths:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLabel" name="lbl_VS_deaths">
+         <property name="text">
+          <string>VS Deaths:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="lbl_NC_kills_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="lbl_TR_kills_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="lbl_VS_kills_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="lbl_NC_deaths_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="lbl_TR_deaths_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QLabel" name="lbl_VS_deaths_value">
          <property name="text">
           <string/>
          </property>
@@ -561,6 +662,7 @@ Next Cert:</string>
      <string>Export</string>
     </property>
     <addaction name="ExportCSV"/>
+    <addaction name="actionText_File"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuExport"/>
@@ -573,6 +675,11 @@ Next Cert:</string>
   <action name="ExportCSV">
    <property name="text">
     <string>CSV</string>
+   </property>
+  </action>
+  <action name="actionText_File">
+   <property name="text">
+    <string>Text File</string>
    </property>
   </action>
  </widget>

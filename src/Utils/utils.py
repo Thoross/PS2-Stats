@@ -40,4 +40,10 @@ def calculate_per_hour(stat,time_played):
 
 def calculate_per_minute(stat,time_played):
     return float(stat) / float(time_played)
+
+def get_list_as_dict(stats_list):
+    stats_dict = {}
+    for item in stats_list:
+        stats_dict.update({item["stat_name"]:item})
+    return stats_dict
     

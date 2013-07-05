@@ -5,7 +5,7 @@ Created on Jun 25, 2013
 '''
 from src.GUI.ControlMainWindow import ControlMainWindow
 from PySide.QtGui import QApplication,QIcon
-import sys, os
+import sys
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

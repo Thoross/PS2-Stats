@@ -46,4 +46,13 @@ def get_list_as_dict(stats_list):
     for item in stats_list:
         stats_dict.update({item["stat_name"]:item})
     return stats_dict
-    
+
+def calculate_total_faction_deaths(stats_list):
+    faction_deaths = { "NC":0,"TR":0,"VS":0}
+    for stat in stats_list:
+        if stat["stat_name"] == "killed_by":
+            faction_deaths["NC"] += int(stat["value_forever_nc"])
+            faction_deaths["TR"] += int(stat["value_forever_tr"])
+            faction_deaths["VS"] += int(stat["value_forever_vs"])
+            
+    return faction_deaths

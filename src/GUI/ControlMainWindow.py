@@ -107,28 +107,74 @@ class ControlMainWindow(QMainWindow):
         self.ui.lbl_dpm_value.clear()
         self.ui.lbl_dph_value.clear()
         self.ui.lbl_kdr_value.clear()
+        self.ui.lbl_NC_deaths_value.clear()
+        self.ui.lbl_NC_kills_value.clear()
+        self.ui.lbl_TR_deaths_value.clear()
+        self.ui.lbl_TR_kills_value.clear()
+        self.ui.lbl_VS_deaths_value.clear()
+        self.ui.lbl_VS_kills_value.clear()
         
     def display_faction_stats(self,player):
         if player.faction == "New Conglomerate":
+            self.toggle_faction_labels(player.faction)
+            self.ui.lbl_TR_kills_value.setText(comma_thousands(player.kills_per_faction["TR"]))
+            self.ui.lbl_VS_kills_value.setText(comma_thousands(player.kills_per_faction["VS"]))
+            self.ui.lbl_TR_deaths_value.setText(comma_thousands(player.killed_by_faction["TR"]))
+            self.ui.lbl_VS_deaths_value.setText(comma_thousands(player.killed_by_faction["VS"]))
+               
+        elif player.faction == "Terran Republic":
+            self.toggle_faction_labels(player.faction)
+            self.ui.lbl_VS_kills_value.setText(comma_thousands(player.kills_per_faction["VS"]))
+            self.ui.lbl_NC_kills_value.setText(comma_thousands(player.kills_per_faction["NC"]))
+            self.ui.lbl_NC_deaths_value.setText(comma_thousands(player.killed_by_faction["NC"]))
+            self.ui.lbl_NC_deaths_value.setText(comma_thousands(player.killed_by_faction["VS"]))
+            
+        else:
+            self.toggle_faction_labels(player.faction)
+            self.ui.lbl_TR_kills_value.setText(comma_thousands(player.kills_per_faction["TR"]))
+            self.ui.lbl_NC_kills_value.setText(comma_thousands(player.kills_per_faction["NC"]))
+            self.ui.lbl_NC_deaths_value.setText(comma_thousands(player.killed_by_faction["NC"]))
+            self.ui.lbl_TR_deaths_value.setText(comma_thousands(player.killed_by_faction["TR"]))
+    
+    def toggle_faction_labels(self,faction):
+        if faction == "New Conglomerate":
             self.ui.lbl_NC_kills.setVisible(False)
             self.ui.lbl_NC_kills_value.setVisible(False)
             self.ui.lbl_NC_deaths.setVisible(False)
             self.ui.lbl_NC_deaths_value.setVisible(False)
-            self.ui.lbl_TR_kills_value.setText(comma_thousands(player.kills_per_faction["TR"]))
-            self.ui.lbl_VS_kills_value.setText(comma_thousands(player.kills_per_faction["VS"]))
-               
-        elif player.faction == "Terran Republic":
+            self.ui.lbl_TR_kills.setVisible(True)
+            self.ui.lbl_TR_kills_value.setVisible(True)
+            self.ui.lbl_TR_deaths.setVisible(True)
+            self.ui.lbl_TR_deaths_value.setVisible(True)
+            self.ui.lbl_VS_kills.setVisible(True)
+            self.ui.lbl_VS_kills_value.setVisible(True)
+            self.ui.lbl_VS_deaths.setVisible(True)
+            self.ui.lbl_VS_deaths_value.setVisible(True)
+              
+        elif faction == "Terran Republic":
+            self.ui.lbl_NC_kills.setVisible(True)
+            self.ui.lbl_NC_kills_value.setVisible(True)
+            self.ui.lbl_NC_deaths.setVisible(True)
+            self.ui.lbl_NC_deaths_value.setVisible(True)
             self.ui.lbl_TR_kills.setVisible(False)
             self.ui.lbl_TR_kills_value.setVisible(False)
-            self.ui.lbl_TR_deaths_value.setVisible(False)
             self.ui.lbl_TR_deaths.setVisible(False)
-            self.ui.lbl_VS_kills_value.setText(comma_thousands(player.kills_per_faction["VS"]))
-            self.ui.lbl_NC_kills_value.setText(comma_thousands(player.kills_per_faction["NC"]))
-            
+            self.ui.lbl_TR_deaths_value.setVisible(False)
+            self.ui.lbl_VS_kills.setVisible(True)
+            self.ui.lbl_VS_kills_value.setVisible(True)
+            self.ui.lbl_VS_deaths.setVisible(True)
+            self.ui.lbl_VS_deaths_value.setVisible(True) 
+           
         else:
+            self.ui.lbl_NC_kills.setVisible(True)
+            self.ui.lbl_NC_kills_value.setVisible(True)
+            self.ui.lbl_NC_deaths.setVisible(True)
+            self.ui.lbl_NC_deaths_value.setVisible(True)
+            self.ui.lbl_TR_kills.setVisible(True)
+            self.ui.lbl_TR_kills_value.setVisible(True)
+            self.ui.lbl_TR_deaths.setVisible(True)
+            self.ui.lbl_TR_deaths_value.setVisible(True)
             self.ui.lbl_VS_kills.setVisible(False)
             self.ui.lbl_VS_kills_value.setVisible(False)
             self.ui.lbl_VS_deaths.setVisible(False)
             self.ui.lbl_VS_deaths_value.setVisible(False)
-            self.ui.lbl_TR_kills_value.setText(comma_thousands(player.kills_per_faction["TR"]))
-            self.ui.lbl_NC_kills_value.setText(comma_thousands(player.kills_per_faction["NC"]))

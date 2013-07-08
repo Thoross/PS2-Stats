@@ -77,3 +77,4 @@ class CharacterController(object):
                             "VS": stats_by_faction["weapon_kills"]["value_forever_vs"]
                             }
         player.kills_per_faction = kills_by_faction
+        player.killed_by_faction = calculate_total_faction_deaths(stats_by_faction_base)

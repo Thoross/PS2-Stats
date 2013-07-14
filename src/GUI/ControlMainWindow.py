@@ -1,8 +1,18 @@
 '''
-Created on Jul 2, 2013
+PS2-Stats : Python module for PlanetSide 2 Stat tracking.
 
-@author: bbetts
+Copyright (C) 2013 Brendan Betts (brendan.betts@live.com)
+
+License: GNU LGPL
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+Created on Jul 2, 2013
 '''
+
 from PySide.QtGui import QMainWindow
 from src.GUI.mainwindow import Ui_MainWindow
 from src.controllers.CharacterController import CharacterController
@@ -10,21 +20,16 @@ from datetime import timedelta
 from src.Utils.utils import *
 import sys
 
+
 class ControlMainWindow(QMainWindow):
-    def __init__(self,parent=None):
-        super(ControlMainWindow,self).__init__(parent)
-        self.ui=Ui_MainWindow()
+    def __init__(self, parent=None):
+        super(ControlMainWindow, self).__init__(parent)
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.btn_search.clicked.connect(self.on_search)
         self.ui.txt_name.returnPressed.connect(self.on_search)
         self.ui.btn_clear.clicked.connect(self.on_clear)
-        self.ui.actionText_File.triggered.connect(self.export_to_file)
         self.ui.actionQuit.triggered.connect(sys.exit)
-        
-    def export_to_file(self):
-        controller = CharacterController()
-        player = controller.get_character(self.ui.lbl_name_value.text())
-        
         
     def on_search(self):
         controller = CharacterController()
@@ -40,7 +45,7 @@ class ControlMainWindow(QMainWindow):
         self.clear_character_info_tab()   
         self.clear_kills_info_tab()     
         
-    def set_character_info(self,player):    
+    def set_character_info(self, player):
         self.ui.lbl_name_value.setText(player.name)
         self.ui.lbl_rank_value.setText(player.level)
         self.ui.lbl_score_value.setText(comma_thousands(player.score))
@@ -64,7 +69,7 @@ class ControlMainWindow(QMainWindow):
         self.ui.lbl_medals_earned_value.setText(comma_thousands(player.medals))
         self.ui.lbl_ribbons_earned_value.setText(comma_thousands(player.ribbons))
         
-    def set_kills_info(self,player):
+    def set_kills_info(self, player):
         self.ui.lbl_kills_value.setText(comma_thousands(player.kills))
         self.ui.lbl_kph_value.setText(round_to_two_decimal(player.kills_per_hour))
         self.ui.lbl_kpm_value.setText(round_to_two_decimal(player.kills_per_minute))
@@ -76,8 +81,9 @@ class ControlMainWindow(QMainWindow):
         self.display_faction_stats(player)
         self.ui.lbl_revenge_value.setText(comma_thousands(player.revenge_count))
         self.ui.lbl_dominations_value.setText(comma_thousands(player.dominations))
-        
-        
+        self.ui.lbl_aph_value.setText(round_to_two_decimal(player.assists_per_hour))
+        self.ui.lbl_apm_value.setText(round_to_two_decimal(player.assists_per_minute))
+
     def clear_character_info_tab(self):
         self.ui.lbl_name_value.clear()
         self.ui.lbl_available_certs_value.clear()
@@ -126,8 +132,10 @@ class ControlMainWindow(QMainWindow):
         self.ui.lbl_VS_revenge_value.clear()
         self.ui.lbl_revenge_value.clear()
         self.ui.lbl_dominations_value.clear()
+        self.ui.lbl_aph_value.clear()
+        self.ui.lbl_apm_value.clear()
         
-    def display_faction_stats(self,player):
+    def display_faction_stats(self, player):
         if player.faction == "New Conglomerate":
             self.toggle_faction_labels(player.faction)
             self.ui.lbl_TR_kills_value.setText(comma_thousands(player.kills_per_faction["TR"]))
@@ -139,7 +147,6 @@ class ControlMainWindow(QMainWindow):
             self.ui.lbl_TR_revenge_value.setText(comma_thousands(player.revenge_count_per_faction["TR"]))
             self.ui.lbl_VS_revenge_value.setText(comma_thousands(player.revenge_count_per_faction["VS"]))
 
-               
         elif player.faction == "Terran Republic":
             self.toggle_faction_labels(player.faction)
             self.ui.lbl_VS_kills_value.setText(comma_thousands(player.kills_per_faction["VS"]))
@@ -161,7 +168,7 @@ class ControlMainWindow(QMainWindow):
             self.ui.lbl_TR_revenge_value.setText(comma_thousands(player.revenge_count_per_faction["TR"]))
             self.ui.lbl_NC_revenge_value.setText(comma_thousands(player.revenge_count_per_faction["NC"]))
             
-    def toggle_faction_labels(self,faction):
+    def toggle_faction_labels(self, faction):
         if faction == "New Conglomerate":
             self.ui.lbl_NC_kills.setVisible(False)
             self.ui.lbl_NC_kills_value.setVisible(False)
@@ -213,8 +220,7 @@ class ControlMainWindow(QMainWindow):
             self.ui.lbl_VS_dominations_value.setVisible(True)
             self.ui.lbl_VS_revenge.setVisible(True)
             self.ui.lbl_VS_revenge_value.setVisible(True)
-               
-           
+
         else:
             self.ui.lbl_NC_kills.setVisible(True)
             self.ui.lbl_NC_kills_value.setVisible(True)

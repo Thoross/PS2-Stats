@@ -75,10 +75,11 @@ class Character(object):
         self.stats = []
         self.stat_by_faction = []
         self.assists = 0
+        self.assists_per_minute = 0.00
+        self.assists_per_hour = 0.00
         self.headshots = 0
         self.headshots_by_empire = {}
         self.dominations = 0
         self.dominations_per_faction = {}
         self.revenge_count = 0
         self.revenge_count_per_faction = {}
-        

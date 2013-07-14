@@ -77,4 +77,8 @@ class Character(object):
         self.assists = 0
         self.headshots = 0
         self.headshots_by_empire = {}
+        self.dominations = 0
+        self.dominations_per_faction = {}
+        self.revenge_count = 0
+        self.revenge_count_per_faction = {}
         

@@ -56,3 +56,15 @@ def calculate_total_faction_deaths(stats_list):
             faction_deaths["VS"] += int(stat["value_forever_vs"])
             
     return faction_deaths
+
+def get_faction_stat(stats_list,stat):
+    faction_stat = {
+                    "NC" : stats_list[stat]["value_forever_nc"],
+                    "TR" : stats_list[stat]["value_forever_tr"],
+                    "VS" : stats_list[stat]["value_forever_vs"]
+                    }
+    return faction_stat
+
+def calculate_total_faction_stat(stats_dict):
+    return int(stats_dict["NC"]) + int(stats_dict["TR"]) + int(stats_dict["VS"])
+    

@@ -61,6 +61,7 @@ class CharacterController(object):
     def get_kills_info(self,base,player):
         stats_history_base = base["stats"]["stat_history"]
         stats_by_faction_base = base["stats"]["stat_by_faction"]
+        stats_base = base["stats"]["stat"]
         
         player.kills = stats_history_base["kills"]["all_time"]
         player.kills_per_minute = calculate_per_minute(player.kills,player.time_played)
@@ -69,12 +70,15 @@ class CharacterController(object):
         player.deaths_per_minute = calculate_per_minute(player.deaths,player.time_played)
         player.deaths_per_hour = calculate_per_hour(player.deaths,player.time_played)
         player.kill_death_ratio = float(player.kills) / float(player.deaths)
+        
         stats_by_faction = get_list_as_dict(stats_by_faction_base)
-        #player.assists = stats_history_base["assist_count"]["all_time"]
-        kills_by_faction = {
-                            "NC": stats_by_faction["weapon_kills"]["value_forever_nc"],
-                            "TR": stats_by_faction["weapon_kills"]["value_forever_tr"],
-                            "VS": stats_by_faction["weapon_kills"]["value_forever_vs"]
-                            }
-        player.kills_per_faction = kills_by_faction
+        stats = get_list_as_dict(stats_base)
+        
+        player.assists = stats["assist_count"]["value_forever"]
+            
+        player.kills_per_faction = get_faction_stat(stats_by_faction,"kills")
         player.killed_by_faction = calculate_total_faction_deaths(stats_by_faction_base)
+        player.dominations_per_faction = get_faction_stat(stats_by_faction,"domination_count")
+        player.revenge_count_per_faction = get_faction_stat(stats_by_faction,"revenge_count")
+        player.dominations = calculate_total_faction_stat(player.dominations_per_faction)
+        player.revenge_count = calculate_total_faction_stat(player.revenge_count_per_faction)

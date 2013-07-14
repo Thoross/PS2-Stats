@@ -481,13 +481,6 @@ Per Hour:</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="5">
-        <widget class="QLabel" name="lbl_kdr_value">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="1">
         <widget class="QLabel" name="lbl_kpm_value">
          <property name="text">
@@ -509,7 +502,7 @@ Per Hour:</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="4">
+       <item row="6" column="2">
         <widget class="QLabel" name="lbl_kdr">
          <property name="text">
           <string>Kill Death 
@@ -546,13 +539,6 @@ Per Minute:</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="5">
-        <widget class="QLabel" name="lbl_assists_value">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="3">
         <widget class="QLabel" name="lbl_dpm_value">
          <property name="text">
@@ -560,7 +546,7 @@ Per Minute:</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="4">
+       <item row="6" column="0">
         <widget class="QLabel" name="lbl_assists">
          <property name="text">
           <string>Assists:</string>
@@ -637,6 +623,133 @@ Per Minute:</string>
          </property>
         </widget>
        </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="lbl_assists_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QLabel" name="lbl_kdr_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="5">
+        <widget class="QLabel" name="lbl_VS_dominations_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="4">
+        <widget class="QLabel" name="lbl_VS_dominations">
+         <property name="text">
+          <string>VS Dominations:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="4">
+        <widget class="QLabel" name="lbl_TR_dominations">
+         <property name="text">
+          <string>TR Dominations:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="4">
+        <widget class="QLabel" name="lbl_NC_domination">
+         <property name="text">
+          <string>NC Dominations:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="5">
+        <widget class="QLabel" name="lbl_TR_dominations_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="5">
+        <widget class="QLabel" name="lbl_NC_domination_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLabel" name="lbl_TR_revenge">
+         <property name="text">
+          <string>TR Revenge Count:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLabel" name="lbl_NC_revenge">
+         <property name="text">
+          <string>NC Revenge Count:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5">
+        <widget class="QLabel" name="lbl_NC_revenge_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QLabel" name="lbl_TR_revenge_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QLabel" name="lbl_VS_revenge">
+         <property name="text">
+          <string>VS Revenge Count:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="5">
+        <widget class="QLabel" name="lbl_VS_revenge_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="lbl_revenge">
+         <property name="text">
+          <string>Total Revenge 
+Count:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QLabel" name="lbl_revenge_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLabel" name="lbl_dominations">
+         <property name="text">
+          <string>Total Dominations:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QLabel" name="lbl_dominations_value">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -648,7 +761,7 @@ Per Minute:</string>
      <x>0</x>
      <y>0</y>
      <width>642</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

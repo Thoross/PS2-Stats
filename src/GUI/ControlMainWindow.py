@@ -19,6 +19,7 @@ from src.controllers.CharacterController import CharacterController
 from datetime import timedelta
 from src.Utils.utils import *
 import sys
+from src.GUI.ControlErrorDialog import ControlErrorDialog
 
 
 class ControlMainWindow(QMainWindow):
@@ -36,8 +37,14 @@ class ControlMainWindow(QMainWindow):
         if self.ui.txt_name.text() != "":
             name = self.ui.txt_name.text()
             player = controller.get_character(name)
-            self.set_character_info(player)
-            self.set_kills_info(player)
+            if player != "Not found.":
+                self.set_character_info(player)
+                self.set_kills_info(player)
+            else:
+                error = ControlErrorDialog(None, "No Player")
+                error.show()
+
+
             
     def on_clear(self):
         self.ui.txt_name.clear()

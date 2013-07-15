@@ -22,21 +22,25 @@ class CharacterController(object):
 
     def get_character(self, name):
         url_return = do_request("character/?name.first_lower=%s&c:resolve=world" % name.lower())
-        
-        player_id = url_return["character_list"][0]["id"]
-        player_name = url_return["character_list"][0]["name"]["first"]
-        
-        api_result = do_request("single_character_by_id/?id=%s&c:resolve=outfit,world" % player_id)
-        
-        player = Character(player_id, player_name)
-        base = api_result["single_character_by_id_list"][0]
-        
-        self.get_character_info(base, player)
-        self.get_kills_info(base, player)
-        
-        return player
-    
-    
+
+        try:
+            player_id = url_return["character_list"][0]["id"]
+            player_name = url_return["character_list"][0]["name"]["first"]
+
+            api_result = do_request("single_character_by_id/?id=%s&c:resolve=outfit,world" % player_id)
+
+            player = Character(player_id, player_name)
+            base = api_result["single_character_by_id_list"][0]
+
+            self.get_character_info(base, player)
+            self.get_kills_info(base, player)
+
+            return player
+
+        except:
+
+            return "Not found."
+
     def get_character_info(self,base,player):
         stats_history_base = base["stats"]["stat_history"]
         certs_base = base["certs"]
@@ -63,7 +67,7 @@ class CharacterController(object):
         player.medals = stats_history_base["medals"]["all_time"]
         try:
             player.outfit = base["outfit"]["name"]
-        except:
+        except IndexError:
             player.outfit = "None"
         
     def get_kills_info(self, base, player):

@@ -13,7 +13,7 @@ PS2-Stats
 Requirements
 ~~~~~~~~~~~~
 
-	* Python 2.7/3.3
+	* Python 2.7
 	* `Requests for Humans <http://docs.python-requests.org/en/latest/>`_
 	* `Qt Library <http://qt-project.org/downloads>`_
 	* `PySide <http://qt-project.org/wiki/PySide>`_

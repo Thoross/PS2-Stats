@@ -81,9 +81,9 @@ class CharacterController(object):
         player.deaths = stats_history_base["deaths"]["all_time"]
         player.deaths_per_minute = calculate_per_minute(player.deaths, player.time_played)
         player.deaths_per_hour = calculate_per_hour(player.deaths, player.time_played)
-        player.kill_death_ratio = float(player.kills) / float(player.deaths)
-        player.kdrph = float(player.kills_per_hour) / float(player.deaths_per_hour)
-        player.kdrpm = float(player.kills_per_minute) / float(player.deaths_per_minute)
+        player.kill_death_ratio = float(player.kills) / (float(player.deaths) or 1)
+        player.kdrph = float(player.kills_per_hour) / (float(player.deaths_per_hour) or 1)
+        player.kdrpm = float(player.kills_per_minute) / (float(player.deaths_per_minute) or 1)
         
         stats_by_faction = get_list_as_dict(stats_by_faction_base)
         stats = get_list_as_dict(stats_base)

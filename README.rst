@@ -7,7 +7,7 @@ PS2-Stats
 	* Created by: Brendan Betts (2013)
 	* Dev Home: `https://github.com/Thoross/PS2-Stats <https://github.com/Thoross/PS2-Stats>`_
 
-----
+
 
 ~~~~~~~~~~~~
 Requirements
@@ -17,4 +17,4 @@ Requirements
 	* `Requests for Humans <http://docs.python-requests.org/en/latest/>`_
 	* `Qt Library <http://qt-project.org/downloads>`_
 	* `PySide <http://qt-project.org/wiki/PySide>`_
-----
+
